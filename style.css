@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins";
+}
+
+body {
+  min-height: 100vh;
+}
+
+.parallax {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+  overflow: hidden;
+  background: linear-gradient(#1c0522, #433daf);
+}
+.parallax::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(to top, #1c0522, transparent);
+  z-index: 1000;
+}
+.parallax img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+}
+.parallax img#moon {
+  mix-blend-mode: screen;
+}
+.parallax img#front-mountain {
+  z-index: 10;
+}
+.parallax #text {
+  position: absolute;
+  right: -500px;
+  top: 50px;
+  color: #fff;
+  white-space: nowrap;
+  font-size: 5vw;
+  z-index: 9;
+}
+.parallax #btn {
+  text-decoration: none;
+  background: #fff;
+  color: #2b1055;
+  padding: 8px 30px;
+  font-size: 18px;
+  border-radius: 40px;
+  z-index: 9;
+  transform: translateY(100px);
+}
+
+.confession {
+  width: 100%;
+  background: linear-gradient(#1c0522, #433daf);
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.confession .title {
+  font-size: 32px;
+  color: #fff;
+}
+.confession .title_greeting {
+  font-size: 18px;
+  margin-top: 100px;
+}
+
+.box-container {
+  display: grid;
+  width: 85%;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 50px;
+  gap: 30px;
+}
+.box-container .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #fcf8fe;
+  border-radius: 12px;
+  aspect-ratio: 5/3;
+  box-shadow: inset 0px 0px 10px 0px #2b1055;
+  position: relative;
+}
+.box-container .box .active {
+  opacity: 1 !important;
+}
+.box-container .box .cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background-color: #fcf8fe;
+  box-shadow: 0px 0px 10px 0px #ffffff;
+  position: absolute;
+  transition: all 1s;
+  cursor: pointer;
+}
+.box-container .box .cover .star-container {
+  position: absolute;
+  height: -moz-fit-content;
+  height: fit-content;
+  top: 10px;
+  left: 10px;
+  opacity: 0.5;
+}
+.box-container .box .cover .star-container .mt-1 {
+  margin-top: 5px;
+}
+.box-container .box .cover .bright-moon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+}
+.box-container .box .cover p {
+  font-size: 18px;
+  color: #1c0522;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.fade {
+  opacity: 0;
+  visibility: none !important;
+  pointer-events: none;
+  z-index: 0 !important;
+}
+
+.open-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ecdbf4;
+  z-index: 9999;
+  transition: all 800ms;
+}
+.open-screen .btn-open {
+  padding: 10px 14px 10px 14px;
+  border-radius: 12px;
+  color: #2b1055;
+  background-color: #fcf8fe;
+  border: 1px solid #2b1055;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 743px) {
+  #text {
+    font-size: 34px !important;
+    right: -500px !important;
+    top: 150px !important;
+  }
+  #btn {
+    transform: translateY(200px) !important;
+    visibility: hidden;
+  }
+  .confession {
+    padding-top: 50px;
+  }
+  .confession .title {
+    font-size: 32px;
+  }
+  .box-container {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}/*# sourceMappingURL=style.css.map */
